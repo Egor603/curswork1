@@ -78,8 +78,8 @@ def spend_by_category(
         if date_str:
             end_date = pd.to_datetime(date_str)
             start_date = end_date - timedelta(days=90)
-            df = df[(df['Дата операции'] >= start_date) &
-                    (df['Дата операции'] <= end_date)]
+            df = df[(df['Дата операции'] >= start_date)
+                    & (df['Дата операции'] <= end_date)]
             result.update({
                 "date_from": start_date.strftime("%Y-%m-%d"),
                 "date_to": end_date.strftime("%Y-%m-%d")

@@ -1,0 +1,11 @@
+# виртуальное окружение / IDE
+.venv/
+.idea/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+.env
+*.secret
+__pycache__

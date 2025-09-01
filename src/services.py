@@ -172,7 +172,7 @@ def suggest_products(transactions: List[Dict[str, Any]]) -> str:
         products.append({
             "name": "Инвестиционный счёт",
             "description": "Доходность до 8% годовых с возможностью "
-                          "частичного снятия",
+                           "частичного снятия",
             "reason": "У вас есть свободные средства для инвестирования"
         })
 
