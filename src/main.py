@@ -44,7 +44,15 @@ def main() -> None:
 
     # Вызов функции сервисов
     print("Сервисы - рекомендации товаров:")
-    print(suggest_products())
+
+    # Создаем список словарей с данными транзакций для рекомендаций
+    if Path(args.file).exists():
+        df = pd.read_excel(args.file)
+        # Преобразуем DataFrame в список словарей (предполагаем, что функция ожидает такой формат)
+        transactions_data = df.to_dict('records')
+        print(suggest_products(transactions_data))
+    else:
+        print("Файл с транзакциями не найден, рекомендации недоступны")
 
 
 if __name__ == "__main__":

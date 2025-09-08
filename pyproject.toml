@@ -23,3 +23,41 @@ target-version = ['py38']
 [tool.isort]
 profile = "black"
 line_length = 120
+
+[tool.mypy]
+# Базовые настройки
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_untyped_calls = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+# Настройки для внешних библиотек
+[[tool.mypy.overrides]]
+module = [
+    "fastapi.*",
+    "pandas.*",
+    "requests.*",
+    "uvicorn.*"
+]
+ignore_missing_imports = true
+
+# Игнорирование определенных файлов или директорий
+exclude = [
+    "tests/",
+    "build/",
+    "dist/",
+    ".venv/",
+    "venv/"
+]
+
+# Дополнительные настройки
+show_error_codes = true
+strict_equality = true
+warn_unreachable = true
