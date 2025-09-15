@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "coursework-1"
+version = "0.1.0"
+description = "Demo coursework project"
+authors = ["Danilka <Gipno262@gmail.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "*"
+requests = "*"
+openpyxl = "*"
+
+# Разработочные зависимости (линтеры, форматтеры и т.д.)
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+flake8 = "^6.1.0"
+pylint = "^2.17.4"
+mypy = "^1.9.0"
+black = "^24.3.0"
+isort = "^5.13.2"
+pytest = "^8.1.1"  # опционально: для тестирования
+pre-commit = "^3.3.3"  # опционально: для автоматической проверки перед коммитом
+
+# Конфигурация Black
+[tool.black]
+line-length = 119
+exclude = '.git|venv'
+
+# Конфигурация isort
+[tool.isort]
+line_length = 119
+
+# Конфигурация mypy
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = 'venv'
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
